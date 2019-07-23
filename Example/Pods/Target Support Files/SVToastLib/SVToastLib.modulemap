@@ -1,0 +1,6 @@
+framework module SVToastLib {
+  umbrella header "SVToastLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

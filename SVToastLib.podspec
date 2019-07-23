@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SVToastLib'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SVToastLib.'
+  s.summary          = '基于修改源码之后的 SVProgressHUD 的 toast 弹窗'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,13 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+对 SVProgressHUD 源码做如下修改：
+1. 新添加了 hud 的水平布局方式；
+2. 新增加了可以修改菊花大小的属性；
+3. 新增加了因单利造成的弹窗不一致的解决方法——重置配置。
+
+基于修改后的源码，新建一个管理 toast 的类。
+
                        DESC
 
   s.homepage         = 'https://github.com/hqm_vip@163.com/SVToastLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'hqm_vip@163.com' => 'hqm_vip@163.com' }
+  s.author           = { 'KeymonWong' => 'hqm_vip@163.com' }
   s.source           = { :git => 'https://github.com/hqm_vip@163.com/SVToastLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
