@@ -37,10 +37,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SVToastLib/**/*.{h,m}'
+  # s.resource = 'SVToastLib/SVProgressHUD/SVProgressHUD.bundle'
   
-  s.resource_bundles = {
-    'SVToastLib' => ['SVToastLib/SVProgressHUD/SVProgressHUD.bundle']
-  }
+  # s.resource_bundles = {
+  #   'SVToastLib' => ['SVToastLib/SVProgressHUD/SVProgressHUD.bundle/*.png']
+  # }
 
   # s.frameworks = 'UIKit', 'Foundation'
   # s.public_header_files = 'Pod/Classes/**/*.h'
