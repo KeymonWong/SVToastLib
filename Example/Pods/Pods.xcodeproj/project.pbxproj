@@ -51,8 +51,8 @@
 		71BFA2224D06EF72E9B13167A7581FCA /* SVToastLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVToastLib.modulemap; sourceTree = "<group>"; };
 		86D791BBD73AD51AB33A2E64DCB4CBFC /* Pods-SVToastLib_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVToastLib_Tests-Info.plist"; sourceTree = "<group>"; };
 		8FCA78542323262F36A0E8CBF9874797 /* Pods-SVToastLib_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVToastLib_Example-Info.plist"; sourceTree = "<group>"; };
-		94C16E828EA3EF565121DE9C3E2258E5 /* SVToastLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SVToastLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C16E828EA3EF565121DE9C3E2258E5 /* SVToastLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SVToastLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A08B96AA982E65F04A5C1A25ACE9DE3C /* SVToastLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVToastLib-dummy.m"; sourceTree = "<group>"; };
 		B6F560453C7E6E0ECED5A8D32EF7623D /* Pods-SVToastLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVToastLib_Tests.modulemap"; sourceTree = "<group>"; };
 		B9D2F0DB5D547283B90D804A778A10A7 /* Pods-SVToastLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVToastLib_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -62,13 +62,13 @@
 		C5077B55DB7B150818D1AB2EF8FE4F98 /* Pods-SVToastLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVToastLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C636AE35780A8A206A6836675E162AC4 /* Pods-SVToastLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVToastLib_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CE7F3ACA843A43674AE33AF44369A3BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		D1D78D2712F3C287549AC51A18C5073B /* Pods_SVToastLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SVToastLib_Example.framework; path = "Pods-SVToastLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D29692D982EAB7B220F38B56ABCFEC9A /* SVToastLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVToastLib.framework; path = SVToastLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7F3ACA843A43674AE33AF44369A3BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D1D78D2712F3C287549AC51A18C5073B /* Pods_SVToastLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVToastLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29692D982EAB7B220F38B56ABCFEC9A /* SVToastLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVToastLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE078CEB956EA7ADB11F4CC257598803 /* Pods-SVToastLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVToastLib_Example.modulemap"; sourceTree = "<group>"; };
-		E60F2DCA015D816E6199603D334D6201 /* Pods_SVToastLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SVToastLib_Tests.framework; path = "Pods-SVToastLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60F2DCA015D816E6199603D334D6201 /* Pods_SVToastLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVToastLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4E8EEB05F30AA7143D4F80D12165E0 /* SVToastLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVToastLib.xcconfig; sourceTree = "<group>"; };
-		FFEF5BC669FA5B9BE18C262B80146E99 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FFEF5BC669FA5B9BE18C262B80146E99 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -456,8 +457,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

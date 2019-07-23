@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
                        DESC
 
-  s.homepage         = 'https://github.com/hqm_vip@163.com/SVToastLib'
+  s.homepage         = 'https://github.com/KeymonWong/SVToastLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'KeymonWong' => 'hqm_vip@163.com' }
