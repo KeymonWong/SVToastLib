@@ -36,13 +36,13 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SVToastLib/**/*.{h,m}'
-  # s.resources = 'SVToastLib/SVProgressHUD.bundle'
-  
-  s.subspec 'SVProgressHUD' do |ss|
-    ss.source_files = 'SVToastLib/SV{Indefinite,Progress}AnimatedView.{h,m}', 'SVToastLib/SVProgressHUD.{h,m}', 'SVToastLib/SVRadialGradientLayer.{h,m}'
-    ss.resources = 'SVToastLib/SVProgressHUD.bundle'
-  end
-  
+  s.resources = 'SVToastLib/SVProgressHUD.bundle'
+
+#  s.subspec 'SVProgressHUD' do |ss|
+#    ss.source_files = 'SVToastLib/SV{Indefinite,Progress}AnimatedView.{h,m}', 'SVToastLib/SVProgressHUD.{h,m}', 'SVToastLib/SVRadialGradientLayer.{h,m}'
+#    ss.resources = 'SVToastLib/SVProgressHUD.bundle'
+#  end
+
   #s.resource_bundles = {
   #  'SVToastLib' => ['SVToastLib/SVProgressHUD.bundle/*.png']
   #}
