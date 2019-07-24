@@ -8,6 +8,8 @@
 
 #import "SVViewController.h"
 
+#import <SVToastLib/SVToast.h>
+
 @interface SVViewController ()
 
 @end
@@ -17,13 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor purpleColor];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [SVToast showLoading:@"哈哈哈哈哈霍霍"];
 }
 
 @end
