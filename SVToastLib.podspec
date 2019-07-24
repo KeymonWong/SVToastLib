@@ -18,13 +18,12 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-对 SVProgressHUD 源码做如下修改：
-1. 新添加了 hud 的水平布局方式；
-2. 新增加了可以修改菊花大小的属性；
-3. 新增加了因单利造成的弹窗不一致的解决方法——重置配置。
-
-基于修改后的源码，新建一个管理 toast 的类。
-
+                        对 SVProgressHUD 源码做如下修改：
+                        1. 新添加了 hud 的水平布局方式；
+                        2. 新增加了可以修改菊花大小的属性；
+                        3. 新增加了因单利造成的弹窗不一致的解决方法——重置配置。
+                        
+                        基于修改后的源码，新建一个管理 toast 的类。
                        DESC
 
   s.homepage         = 'https://www.baidu.com'
@@ -37,11 +36,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SVToastLib/**/*.{h,m}'
-  s.resource = 'SVToastLib/SVProgressHUD.bundle'
+  s.resources = 'SVToastLib/SVProgressHUD.bundle'
   
-  # s.resource_bundles = {
-  #   'SVToastLib' => ['SVToastLib/SVProgressHUD/SVProgressHUD.bundle/*.png']
-  # }
+  #s.resource_bundles = {
+  #  'SVToastLib' => ['SVToastLib/SVProgressHUD.bundle/*.png']
+  #}
 
   # s.frameworks = 'UIKit', 'Foundation'
   # s.public_header_files = 'Pod/Classes/**/*.h'
