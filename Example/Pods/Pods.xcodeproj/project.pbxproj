@@ -122,6 +122,7 @@
 		16C3ECE722E866ED0097982A /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				16C3ECFA22E867720097982A /* Resource */,
 				16C3ECE822E866ED0097982A /* SVRadialGradientLayer.m */,
 				16C3ECE922E866ED0097982A /* SVIndefiniteAnimatedView.h */,
 				16C3ECEA22E866ED0097982A /* SVProgressHUD.h */,
@@ -129,11 +130,18 @@
 				16C3ECEC22E866ED0097982A /* SVRadialGradientLayer.h */,
 				16C3ECED22E866ED0097982A /* SVProgressHUD.m */,
 				16C3ECEE22E866ED0097982A /* SVIndefiniteAnimatedView.m */,
-				16C3ECEF22E866ED0097982A /* SVProgressHUD.bundle */,
 				16C3ECF022E866ED0097982A /* SVProgressAnimatedView.h */,
 			);
 			name = SVProgressHUD;
 			path = SVToastLib/SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		16C3ECFA22E867720097982A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				16C3ECEF22E866ED0097982A /* SVProgressHUD.bundle */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		3B15FB3204A586B0F25E757C670EFFB4 /* Pods-SVToastLib_Example */ = {
