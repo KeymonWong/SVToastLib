@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SVToastLib'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '基于修改 SVProgressHUD 源码之后的 toast 弹窗'
 
 # This description is used to generate tags and improve search results.
