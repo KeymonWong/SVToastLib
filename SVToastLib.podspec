@@ -39,12 +39,12 @@ Pod::Spec.new do |s|
 #  s.resources = 'SVToastLib/**/SVProgressHUD/*.{bundle}'
 
   s.subspec 'SVProgressHUD' do |ss|
-    ss.source_files = 'SVToastLib/SVProgressHUD/*.{h,m}'
-    ss.resources = 'SVToastLib/SVProgressHUD/*.{bundle}'
+    ss.source_files = 'SVToastLib/**/*.{h,m}'
+    ss.resources = 'SVToastLib/**/*.{bundle}'
   end
   
   s.subspec 'Sources' do |ss|
-    ss.source_files = 'SVToastLib/Sources/*.{h,m}'
+    ss.source_files = 'SVToastLib/**/*.{h,m}'
   end
 
   #s.resource_bundles = {
