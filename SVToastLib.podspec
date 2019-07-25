@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SVToastLib'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '基于修改 SVProgressHUD 源码之后的 toast 弹窗'
 
 # This description is used to generate tags and improve search results.
@@ -34,9 +34,6 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-
-#  s.source_files = 'SVToastLib/**/*.{h,m}', 'SVToastLib/**/SVProgressHUD/*.{h,m}'
-#  s.resources = 'SVToastLib/**/SVProgressHUD/*.{bundle}'
 
   s.subspec 'SVProgressHUD' do |ss|
     ss.source_files = 'SVToastLib/SVProgressHUD/*.{h,m}'
