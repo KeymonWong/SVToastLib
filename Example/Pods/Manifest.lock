@@ -1,5 +1,10 @@
 PODS:
-  - SVToastLib (0.1.0)
+  - SVToastLib (0.1.1):
+    - SVToastLib/SVProgressHUD (= 0.1.1)
+    - SVToastLib/SVToast (= 0.1.1)
+  - SVToastLib/SVProgressHUD (0.1.1)
+  - SVToastLib/SVToast (0.1.1):
+    - SVToastLib/SVProgressHUD
 
 DEPENDENCIES:
   - SVToastLib (from `../`)
@@ -9,7 +14,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SVToastLib: 3546979781ea807e54f9e1011a74228ffabd659e
+  SVToastLib: 8da03da7cbcb814fea6bccba89dc8eee6160dec6
 
 PODFILE CHECKSUM: c5169ba127f7e7a6398ecee5dc47acde17467737
 

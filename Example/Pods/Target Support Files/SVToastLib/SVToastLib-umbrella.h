@@ -10,10 +10,7 @@
 #endif
 #endif
 
-#import "SVIndefiniteAnimatedView.h"
-#import "SVProgressAnimatedView.h"
 #import "SVProgressHUD.h"
-#import "SVRadialGradientLayer.h"
 #import "SVToast.h"
 
 FOUNDATION_EXPORT double SVToastLibVersionNumber;
