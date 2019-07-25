@@ -36,14 +36,14 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.subspec 'SVProgressHUD' do |ss|
-    ss.source_files = 'SVToastLib/SVProgressHUD/*.{h,m}'
-    ss.resources = 'SVToastLib/SVProgressHUD/SVProgressHUD.bundle'
-    ss.public_header_files = 'SVToastLib/SVProgressHUD/SVProgressHUD.h'
+    ss.source_files = 'SVToastLib/Classes/SVProgressHUD/**/*.{h,m}'
+    ss.resources = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.bundle'
+    ss.public_header_files = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.h'
   end
   
   s.subspec 'SVToast' do |ss|
-    ss.source_files = 'SVToastLib/SVToast/*.{h,m}'
-    ss.dependency 'SVToastLib/SVProgressHUD'
+    ss.source_files = 'SVToastLib/Classes/SVToast/**/*.{h,m}'
+    ss.dependency 'SVToastLib/Classes/SVProgressHUD'
   end
 
   #s.resource_bundles = {
