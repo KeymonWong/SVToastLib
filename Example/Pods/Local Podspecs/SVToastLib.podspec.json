@@ -1,6 +1,6 @@
 {
   "name": "SVToastLib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "基于修改 SVProgressHUD 源码之后的 toast 弹窗",
   "description": "对 SVProgressHUD 源码做如下修改：\n1. 新添加了 hud 的水平布局方式；\n2. 新增加了可以修改菊花大小的属性；\n3. 新增加了因单利造成的弹窗不一致的解决方法——重置配置。\n\n基于修改后的源码，新建一个管理 toast 的类。",
   "homepage": "https://www.baidu.com",
@@ -13,26 +13,11 @@
   },
   "source": {
     "git": "https://github.com/KeymonWong/SVToastLib.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "subspecs": [
-    {
-      "name": "SVProgressHUD",
-      "source_files": "SVToastLib/SVProgressHUD/*.{h,m}",
-      "resources": "SVToastLib/SVProgressHUD/SVProgressHUD.bundle",
-      "public_header_files": "SVToastLib/SVProgressHUD/SVProgressHUD.h"
-    },
-    {
-      "name": "SVToast",
-      "source_files": "SVToastLib/SVToast/*.{h,m}",
-      "dependencies": {
-        "SVToastLib/SVProgressHUD": [
-
-        ]
-      }
-    }
-  ]
+  "source_files": "SVToastLib/Classes/**/*.{h,m}",
+  "resources": "SVToastLib/Classes/SVProgressHUD/SVProgressHUD.bundle"
 }

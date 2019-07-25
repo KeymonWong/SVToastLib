@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ED02E80CD8F89A5AA74B89B677E75585"
-               BuildableName = "SVToastLib"
+               BuildableName = "SVToastLib.framework"
                BlueprintName = "SVToastLib"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

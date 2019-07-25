@@ -35,19 +35,22 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.subspec 'SVProgressHUD' do |ss|
-    ss.source_files = 'SVToastLib/Classes/SVProgressHUD/**/*.{h,m}'
-    ss.resources = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.bundle'
-    ss.public_header_files = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.h'
-  end
-  
-  s.subspec 'SVToast' do |ss|
-    ss.source_files = 'SVToastLib/Classes/SVToast/**/*.{h,m}'
-    ss.dependency 'SVToastLib/Classes/SVProgressHUD'
-  end
+#  s.subspec 'SVProgressHUD' do |ss|
+#    ss.source_files = 'SVToastLib/Classes/**/**/*.{h,m}'
+#    ss.resources = 'SVToastLib/Classes/**/SVProgressHUD.bundle'
+#    ss.public_header_files = 'SVToastLib/Classes/**/SVProgressHUD.h'
+#  end
+#  
+#  s.subspec 'SVToast' do |ss|
+#    ss.source_files = 'SVToastLib/Classes/SVToast/**/*.{h,m}'
+#    ss.dependency 'SVToastLib/Classes/SVProgressHUD'
+#  end
 
+  s.source_files = 'SVToastLib/Classes/**/*.{h,m}'
+  s.resources = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.bundle'
+  
   #s.resource_bundles = {
-  #  'SVToastLib' => ['SVToastLib/SVProgressHUD.bundle/*.png']
+  #  'SVToastLib' => ['SVToastLib/Assets/*.png']
   #}
 
   # s.frameworks = 'UIKit', 'Foundation'
