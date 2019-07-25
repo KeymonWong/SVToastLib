@@ -39,13 +39,13 @@ Pod::Spec.new do |s|
 #  s.resources = 'SVToastLib/**/SVProgressHUD/*.{bundle}'
 
   s.subspec 'SVProgressHUD' do |ss|
-    ss.source_files = 'SVProgressHUD/*.{h,m}'
-    ss.resources = 'SVProgressHUD/SVProgressHUD.bundle'
-    ss.public_header_files = 'SVProgressHUD/SVProgressHUD.h'
+    ss.source_files = 'SVToastLib/SVProgressHUD/*.{h,m}'
+    ss.resources = 'SVToastLib/SVProgressHUD/SVProgressHUD.bundle'
+    ss.public_header_files = 'SVToastLib/SVProgressHUD/SVProgressHUD.h'
   end
   
   s.subspec 'SVToast' do |ss|
-    ss.source_files = 'SVToast/*.{h,m}'
+    ss.source_files = 'SVToastLib/SVToast/*.{h,m}'
     ss.dependency 'SVToastLib/SVProgressHUD'
   end
 
