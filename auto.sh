@@ -107,7 +107,7 @@ echo "git commit -m \"\""
 # commit记录信息，从键盘读取，-t 设置一个很大的时间秒数，表示一直等待用户输入，这里设置的时等待 24 小时，即 86400 秒
 if read -t 86400 -p "👀请输入 commit 信息：" git_commit_desc
 then
-	git commit -m ${git_commit_desc}
+	git commit -m "${git_commit_desc}"
 	git pull origin master
 	git push -u origin master
 else
@@ -125,12 +125,12 @@ pod lib lint --use-libraries --allow-warnings
 # 前一个命令执行成功之后再执行 then 里面的
 if [ $? -eq 0 ];
 then
-	echo "\n --- ⛵️pod 本地验证成功⛵️ --- \n"
+	echo "\n --- 🎉pod 本地验证成功🎉 --- \n"
 	# ${git describe --tags $(git rev-list --tags --max-count=1)}
 	# 获取最新的 tag
-	latestTag=${git describe --tags `git rev-list --tags --max-count=1`}
+	latestTag="${git describe --tags `git rev-list --tags --max-count=1`}"
 	
-	if [[ podspec_version != latestTag ]];
+	if [[ "$podspec_version" != "$latestTag" ]];
 	then
 		echo "\n --- ⛵️执行 git 打tag，并推送到远端⛵️ --- \n"
 		echo "git tag ${podspec_version}"
@@ -139,31 +139,31 @@ then
 		git push origin master --tags
 	else
 		echo "\n --- 🚫git 远端 tag 和 本地 s.version 相同，无需 pod repo push🚫 --- \n"
-		exit
+		exit 1
 	fi
 else
 	echo "\n --- 😡😡pod 本地验证失败😡😡 --- \n"
-	exit
+	exit 1
 fi
 
-# olafuwu-ole-terminal-ole-arc-ios-commonspec 为 pod repo add 时，自己定义的和远端对应的名称
+# OKPodSpecs 为 pod repo add 时，自己定义的和远端对应的名称
 # 本地定义的索引库名称，可以修改为自己的
-local_specs_repo_name="olafuwu-ole-terminal-ole-arc-ios-commonspec"
+local_specs_repo_name="OKPodSpecs"
 # git 远端索引库地址，可以修改为自己的
-reomte_specs_url="https://gitlab.olafuwu.com/ole-terminal/ole-arc/ios/commonspec.git"
+reomte_specs_url="git@github.com:KeymonWong/OKPodSpecs.git"
 # 管理所有 xxx.podspec 的远端索引库被 pod repo add 之后，被添加到了本地的 ~/.cocoapods/repos 目录下
 remote_specs_file_directory_at_local="~/.cocoapods/repos/${local_specs_repo_name}"
 # -d 判断目录是否存在
 if [[ ! -d $remote_specs_file_directory_at_local ]]; 
 then
-	echo "\n --- 本地存在 远端的索引repo，直接 push --- \n"
+	echo "\n --- ⛵️本地存在 远端的索引repo，直接 push⛵️ --- \n"
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 else
-	echo "\n --- 本地不存在 远端的索引repo，先 add 再 push --- \n"
-	pod repo add ${local_specs_repo_name} reomte_specs_url
+	echo "\n --- ⛵️本地不存在 远端的索引repo，先 add 再 push⛵️ --- \n"
+	pod repo add ${local_specs_repo_name} ${reomte_specs_url}
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 fi
 
 
-echo "*** 🎉🎉All Well Done🎉🎉 ***"
+echo "*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"
 
