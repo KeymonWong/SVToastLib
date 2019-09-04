@@ -138,7 +138,7 @@ then
 		echo "git push origin master --tags"
 		git push origin master --tags
 	else
-		echo "\n --- 🚫git 远端 tag 和 本地 s.version 相同，无需 pod repo push🚫 --- \n"
+		echo "\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"
 		exit 1
 	fi
 else
