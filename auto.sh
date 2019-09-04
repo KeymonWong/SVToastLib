@@ -108,7 +108,7 @@ echo "git commit -m \"\""
 if read -t 86400 -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc
 then
 	git commit -m "${git_commit_desc}"
-	# git pull origin master
+	git pull
 	git push -u origin master
 else
 	echo "\n  ⚠️输入超时，请重新执行该脚本⚠️ \n"
