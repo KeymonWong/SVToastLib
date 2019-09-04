@@ -105,7 +105,7 @@ echo "git status \n"
 git status
 echo "git commit -m \"\""
 # commit记录信息，从键盘读取，-t 设置一个很大的时间秒数，表示一直等待用户输入，这里设置的时等待 24 小时，即 86400 秒
-if read -t 86400 -p "👀请输入 commit 信息：" git_commit_desc
+if read -t 86400 -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc
 then
 	git commit -m "${git_commit_desc}"
 	# git pull origin master
