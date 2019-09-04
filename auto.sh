@@ -108,7 +108,7 @@ echo "git commit -m \"\""
 if read -t 86400 -p "👀请输入 commit 信息：" git_commit_desc
 then
 	git commit -m "${git_commit_desc}"
-	git pull origin master
+	# git pull origin master
 	git push -u origin master
 else
 	echo "\n  ⚠️输入超时，请重新执行该脚本⚠️ \n"
@@ -126,9 +126,9 @@ pod lib lint --use-libraries --allow-warnings
 if [ $? -eq 0 ];
 then
 	echo "\n --- 🎉pod 本地验证成功🎉 --- \n"
-	# ${git describe --tags $(git rev-list --tags --max-count=1)}
+	# $(git describe --tags $(git rev-list --tags --max-count=1))
 	# 获取最新的 tag
-	latestTag="${git describe --tags `git rev-list --tags --max-count=1`}"
+	latestTag="$(git describe --tags `git rev-list --tags --max-count=1`)"
 	
 	if [[ "$podspec_version" != "$latestTag" ]];
 	then
