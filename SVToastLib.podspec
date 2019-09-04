@@ -48,10 +48,10 @@ Pod::Spec.new do |s|
 
   s.source_files = 'SVToastLib/Classes/**/*.{h,m}'
   s.resources = 'SVToastLib/Classes/SVProgressHUD/SVProgressHUD.bundle'
-  
-  #s.resource_bundles = {
-  #  'SVToastLib' => ['SVToastLib/Assets/*.png']
-  #}
+
+#  s.resource_bundles = {
+#    'SVToastLib' => ['SVToastLib/Assets/*.png']
+#  }
 
   # s.frameworks = 'UIKit', 'Foundation'
   # s.public_header_files = 'Pod/Classes/**/*.h'
