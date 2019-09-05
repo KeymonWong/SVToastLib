@@ -168,21 +168,21 @@ if [[ ! -d $remote_specs_file_directory_at_local ]]; then
 	echo "\n --- ⛵️本地存在 远端的索引repo，直接 push⛵️ --- \n"
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 
-	# 异常处理，上一个命令没有执行成功，直接退出脚本
-	if [[ $? -ne 0 ]]; then
-		echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
-		exit 1
-	fi
+	# # 异常处理，上一个命令没有执行成功，直接退出脚本
+	# if [[ $? -ne 0 ]]; then
+	# 	echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
+	# 	exit 1
+	# fi
 else
 	echo "\n --- ⛵️本地不存在 远端的索引repo，先 add 再 push⛵️ --- \n"
 	pod repo add ${local_specs_repo_name} ${reomte_specs_url}
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 
-	# 异常处理，上一个命令没有执行成功，直接退出脚本
-	if [[ $? -ne 0 ]]; then
-		echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
-		exit 1
-	fi
+	# # 异常处理，上一个命令没有执行成功，直接退出脚本
+	# if [[ $? -ne 0 ]]; then
+	# 	echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
+	# 	exit 1
+	# fi
 fi
 
 echo "*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"
