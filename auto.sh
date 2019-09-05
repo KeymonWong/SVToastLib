@@ -80,6 +80,8 @@ echo "\n <<<<<<"
 # pod_spec_name=${podspec_file_name}
 # pod_spec_version=${podspec_version}
 
+# 多行注释
+:<<EOF
 echo "\n --- ⛵️执行 pod install⛵️ --- \n"
 
 echo "cd ./Example"
@@ -90,6 +92,7 @@ pod install
 # 回到上级目录
 echo "\n cd .. :返回上级目录"
 cd ..
+EOF
 
 echo "\n --- ⛵执行 git 本地提交代码⛵️ --- \n"
 echo "git add ."
@@ -103,13 +106,14 @@ function readCommitInfo() {
 	# commit记录信息，从键盘读取，-t 设置一个很大的时间秒数，表示一直等待用户输入，这里设置的时等待 24 小时，即 86400 秒
 	if read -t 86400 -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc; then
 		git commit -m "${git_commit_desc}"
-		git pull origin master
-		git push -u origin master
+		# git pull origin master
+		git push #-u origin master
 	else
 		echo "\n  ⚠️输入超时，该脚本退出，请重新执行该脚本⚠️ \n"
 		exit 1
 	fi
 }
+echo "git_commit_desc：$git_commit_desc"
 # 如果没有输入 commit 信息递归提示用户输入
 if [[ "$git_commit_desc" == "" ]]; then
 	readCommitInfo
