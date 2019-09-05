@@ -101,12 +101,12 @@ echo "git status \n"
 git status
 echo "git commit -m \"\""
 
-git_commit_desc=""
 function readCommitInfo() {
 	# commit记录信息，从键盘读取，-t 设置一个很大的时间秒数，表示一直等待用户输入，这里设置的时等待 24 小时，即 86400 秒
-	if read -t 86400 -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit; then
-		git_commit_desc="${git_commit}"
-		git commit -m "${git_commit}"
+	if read -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc; then
+		# git_commit_desc="${git_commit_desc}"
+
+		git commit -m "${git_commit_desc}"
 		# git pull origin master
 		git push #-u origin master
 	else
@@ -114,11 +114,13 @@ function readCommitInfo() {
 		exit 1
 	fi
 }
-echo "git_commit_desc：$git_commit_desc"
+
 # 如果没有输入 commit 信息递归提示用户输入
-if [[ "$git_commit_desc" == "" ]]; then
+if [[ "${git_commit_desc}" == "" ]]; then
+	echo "git_commit_desc：${git_commit_desc}"
 	readCommitInfo
 fi
+		
 
 echo "\n --- ⛵️执行 pod 本地验证⛵️ --- \n"
 
