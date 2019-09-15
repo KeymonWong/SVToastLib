@@ -1,11 +1,11 @@
 #! /bin/sh
 
-COLOR_SUC="\033[0;32m" #成功颜色，绿色
-COLOR_ERR="\033[0;31m" #失败颜色，红色
+COLOR_SUC="\033[1;32m" #成功颜色，绿色
+COLOR_ERR="\033[1;31m" #失败颜色，红色
 COLOR_WARN="\033[1;33m" #警告颜色，黄色
-COLOR_QS="\033[1;35m" #问题颜色，浅粉色
-COLOR_AW="\033[1;36m" #提示颜色，浅青色
-COLOR_TIP="\033[1;32m" #答案颜色，浅绿色
+COLOR_QS="\033[1;35m" #问题颜色，紫红色
+COLOR_AW="\033[1;34m" #提示颜色，蓝色
+COLOR_TIP="\033[1;36m" #答案颜色，青蓝色
 COLOR_END="\033[0m" #颜色结束符，用于将后续的字符颜色还原回原来的颜色，关闭设置的属性
 
 
@@ -40,12 +40,12 @@ function getFileAtDirectory() {
 }
 getFileAtDirectory $directory $podspec_file_ext
 
-echo "\n >>>>>>"
-echo "\n podspec_file_path: ${podspec_file_path}"
-echo "\n podspec_file_name: ${podspec_file_name}"
-echo "\n <<<<<<"
+echo "\n $COLOR_SUC>>>>>>$COLOR_END"
+echo "\n $COLOR_AW"podspec_file_path: ${podspec_file_path}"$COLOR_END"
+echo "\n $COLOR_SUCpodspec_file_name: ${podspec_file_name}$COLOR_END"
+echo "\n $COLOR_SUC<<<<<<$COLOR_END"
 
-echo "\n --- ⛵️获取 podspec 文件内容⛵️ --- \n"
+echo "\n $COLOR_TIP--- ⛵️获取 podspec 文件内容⛵️ ---$COLOR_END \n"
 
 # 查找 podspec 的版本
 search_version="s.version"
@@ -82,9 +82,9 @@ while read my_line; do
 	fi
 done <$my_file
 
-echo "\n >>>>>>"
-echo "\n podspec_version: ${podspec_version}"
-echo "\n <<<<<<"
+echo "\n $COLOR_SUC>>>>>>$COLOR_END"
+echo "\n $COLOR_SUCpodspec_version: ${podspec_version}$COLOR_END"
+echo "\n $COLOR_SUC<<<<<<$COLOR_END"
 
 # pod_spec_name=${podspec_file_name}
 # pod_spec_version=${podspec_version}
@@ -103,7 +103,7 @@ echo "\n cd .. :返回上级目录"
 cd ..
 EOF
 
-echo "\n --- ⛵执行 git 本地提交代码⛵️ --- \n"
+echo "\n $COLOR_TIP--- ⛵执行 git 本地提交代码⛵️ ---$COLOR_END \n"
 echo "git add ."
 git add .
 echo "git status \n"
@@ -127,7 +127,7 @@ function readCommitInfo() {
 }
 readCommitInfo
 
-echo "\n --- ⛵️执行 pod 本地验证⛵️ --- \n"
+echo "\n $COLOR_TIP--- ⛵️执行 pod 本地验证⛵️ ---$COLOR_END \n"
 
 # pod 本地验证
 echo "pod lib lint --use-libraries --allow-warnings"
@@ -136,23 +136,23 @@ echo "pod lib lint --use-libraries --allow-warnings"
 pod lib lint --use-libraries --allow-warnings
 # 前一个命令执行成功之后再执行 then 里面的
 if [ $? -eq 0 ]; then
-	echo $COLOR_SUC"\n --- 🎉pod 本地验证成功🎉 --- \n"$COLOR_SUC
+	echo "\n $COLOR_SUC--- 🎉pod 本地验证成功🎉 ---$COLOR_END \n"
 	# $(git describe --tags $(git rev-list --tags --max-count=1))
 	# 获取最新的 tag
 	latestTag="$(git describe --tags $(git rev-list --tags --max-count=1))"
 
 	if [[ "$podspec_version" != "$latestTag" ]]; then
-		echo "\n --- ⛵️执行 git 打tag，并推送到远端⛵️ --- \n"
+		echo "\n $COLOR_TIP--- ⛵️执行 git 打tag，并推送到远端⛵️ ---$COLOR_END \n"
 		echo "git tag ${podspec_version}"
 		git tag ${podspec_version}
 		echo "git push origin master --tags"
 		git push origin master --tags
 	else
-		echo $COLOR_WARN"\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"$COLOR_WARN
+		echo "\n $COLOR_WARN--- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 ---$COLOR_END \n"
 		exit 1
 	fi
 else
-	echo $COLOR_ERR"\n --- 😡😡pod 本地验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
+	echo "\n $COLOR_ERR--- 😡😡pod 本地验证失败，退出脚本😡😡 ---$COLOR_END \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -161,7 +161,7 @@ echo "pod spec lint --use-libraries --allow-warnings"
 pod spec lint --use-libraries --allow-warnings
 # 异常处理，上一个命令没有执行成功，直接退出脚本
 if [[ $? -ne 0 ]]; then
-	echo $COLOR_ERR "\n --- 😡😡pod 远端验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
+	echo "\n $COLOR_ERR--- 😡😡pod 远端验证失败，退出脚本😡😡 ---$COLOR_END \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -174,24 +174,24 @@ reomte_specs_url="git@github.com:KeymonWong/OKPodSpecs.git"
 remote_specs_file_directory_at_local="~/.cocoapods/repos/${local_specs_repo_name}"
 # -d 判断目录是否存在
 if [[ ! -d $remote_specs_file_directory_at_local ]]; then
-	echo "\n --- ⛵️本地存在 远端的索引repo，直接 push⛵️ --- \n"
+	echo "\n $COLOR_TIP--- ⛵️本地存在 远端的索引repo，直接 push⛵️ ---$COLOR_END \n"
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
+		echo "\n $COLOR_ERR--- 😡😡pod repo push 失败，退出脚本😡😡 ---$COLOR_END \n"
 		exit 1
 	fi
 else
-	echo "\n --- ⛵️本地不存在 远端的索引repo，先 add 再 push⛵️ --- \n"
+	echo "\n $COLOR_TIP--- ⛵️本地不存在 远端的索引repo，先 add 再 push⛵️ ---$COLOR_END \n"
 	pod repo add ${local_specs_repo_name} ${reomte_specs_url}
 	pod repo push ${local_specs_repo_name} ${podspec_file_name} --use-libraries --allow-warnings
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
+		echo "\n $COLOR_ERR--- 😡😡pod repo push 失败，退出脚本😡😡 ---$COLOR_END \n"
 		exit 1
 	fi
 fi
 
-echo $COLOR_SUC"*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"$COLOR_SUC
+echo "$COLOR_SUC*** 🎉🎉🎉All Well Done🎉🎉🎉 ***$COLOR_END"
