@@ -1,5 +1,13 @@
 #! /bin/sh
 
+COLOR_SUC="\033[0;32m" #成功颜色
+COLOR_ERR="\033[1;31m" #失败颜色
+COLOR_WARN="\033[1;20m" #警告颜色
+COLOR_QS="\033[1;37m" #问题颜色
+COLOR_AW="\033[0;37m" #答案颜色
+COLOR_END="\033[1;34m" #颜色结束符
+
+
 echo "\n *** 🚀begin🚀 *** \n"
 
 echo "\n --- ⛵️获取 podspec 文件名和路径⛵️ --- \n"
@@ -127,7 +135,7 @@ echo "pod lib lint --use-libraries --allow-warnings"
 pod lib lint --use-libraries --allow-warnings
 # 前一个命令执行成功之后再执行 then 里面的
 if [ $? -eq 0 ]; then
-	echo "\n --- 🎉pod 本地验证成功🎉 --- \n"
+	echo -e $COLOR_SUC"\n --- 🎉pod 本地验证成功🎉 --- \n"$COLOR_SUC
 	# $(git describe --tags $(git rev-list --tags --max-count=1))
 	# 获取最新的 tag
 	latestTag="$(git describe --tags $(git rev-list --tags --max-count=1))"
@@ -139,11 +147,11 @@ if [ $? -eq 0 ]; then
 		echo "git push origin master --tags"
 		git push origin master --tags
 	else
-		echo "\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"
+		echo -e $COLOR_WARN"\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"$COLOR_WARN
 		exit 1
 	fi
 else
-	echo "\n --- 😡😡pod 本地验证失败，退出脚本😡😡 --- \n"
+	echo -e $COLOR_ERR"\n --- 😡😡pod 本地验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -152,7 +160,7 @@ echo "pod spec lint --use-libraries --allow-warnings"
 pod spec lint --use-libraries --allow-warnings
 # 异常处理，上一个命令没有执行成功，直接退出脚本
 if [[ $? -ne 0 ]]; then
-	echo "\n --- 😡😡pod 远端验证失败，退出脚本😡😡 --- \n"
+	echo -e $COLOR_ERR "\n --- 😡😡pod 远端验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -170,7 +178,7 @@ if [[ ! -d $remote_specs_file_directory_at_local ]]; then
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
+		echo -e $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
 		exit 1
 	fi
 else
@@ -180,9 +188,9 @@ else
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo "\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"
+		echo -e $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
 		exit 1
 	fi
 fi
 
-echo "*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"
+echo -e $COLOR_SUC"*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"$COLOR_SUC
