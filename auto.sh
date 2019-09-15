@@ -1,6 +1,6 @@
 #! /bin/sh
 
-COLOR_SUC="#7fff00" #成功颜色
+COLOR_SUC="\033[0;42m" #成功颜色
 COLOR_ERR="\033[1;31m" #失败颜色
 COLOR_WARN="\033[1;20m" #警告颜色
 COLOR_QS="\033[1;37m" #问题颜色
