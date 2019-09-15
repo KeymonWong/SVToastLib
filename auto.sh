@@ -111,7 +111,7 @@ echo "git commit -m \"\""
 
 # commit记录信息，从键盘读取，-p 为屏幕提示信息
 function readCommitInfo() {
-	read -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc
+	read -p $COLOR_AW"👀请输入 commit 信息<按 Enter 结束>："$COLOR_AW git_commit_desc
 	# 输入不为空
 	if [[ -n "$git_commit_desc" ]]; then
 		git_commit_desc="${git_commit_desc}"
@@ -135,7 +135,7 @@ echo "pod lib lint --use-libraries --allow-warnings"
 pod lib lint --use-libraries --allow-warnings
 # 前一个命令执行成功之后再执行 then 里面的
 if [ $? -eq 0 ]; then
-	echo -e $COLOR_SUC"\n --- 🎉pod 本地验证成功🎉 --- \n"$COLOR_SUC
+	echo $COLOR_SUC"\n --- 🎉pod 本地验证成功🎉 --- \n"$COLOR_SUC
 	# $(git describe --tags $(git rev-list --tags --max-count=1))
 	# 获取最新的 tag
 	latestTag="$(git describe --tags $(git rev-list --tags --max-count=1))"
@@ -147,11 +147,11 @@ if [ $? -eq 0 ]; then
 		echo "git push origin master --tags"
 		git push origin master --tags
 	else
-		echo -e $COLOR_WARN"\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"$COLOR_WARN
+		echo $COLOR_WARN"\n --- 🚫git 远端 tag 和 本地 podspec 中 s.version 相同，无需 pod repo push🚫 --- \n"$COLOR_WARN
 		exit 1
 	fi
 else
-	echo -e $COLOR_ERR"\n --- 😡😡pod 本地验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
+	echo $COLOR_ERR"\n --- 😡😡pod 本地验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -160,7 +160,7 @@ echo "pod spec lint --use-libraries --allow-warnings"
 pod spec lint --use-libraries --allow-warnings
 # 异常处理，上一个命令没有执行成功，直接退出脚本
 if [[ $? -ne 0 ]]; then
-	echo -e $COLOR_ERR "\n --- 😡😡pod 远端验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
+	echo $COLOR_ERR "\n --- 😡😡pod 远端验证失败，退出脚本😡😡 --- \n"$COLOR_ERR
 	exit 1
 fi
 
@@ -178,7 +178,7 @@ if [[ ! -d $remote_specs_file_directory_at_local ]]; then
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo -e $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
+		echo $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
 		exit 1
 	fi
 else
@@ -188,9 +188,9 @@ else
 
 	# 异常处理，上一个命令没有执行成功，直接退出脚本
 	if [[ $? -ne 0 ]]; then
-		echo -e $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
+		echo $COLOR_ERR"\n --- 😡😡pod repo push 失败，退出脚本😡😡 --- \n"$COLOR_ERR
 		exit 1
 	fi
 fi
 
-echo -e $COLOR_SUC"*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"$COLOR_SUC
+echo $COLOR_SUC"*** 🎉🎉🎉All Well Done🎉🎉🎉 ***"$COLOR_SUC
