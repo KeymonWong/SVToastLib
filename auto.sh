@@ -1,16 +1,17 @@
 #! /bin/sh
 
-COLOR_SUC="\033[0;42m" #成功颜色
-COLOR_ERR="\033[1;31m" #失败颜色
-COLOR_WARN="\033[1;20m" #警告颜色
-COLOR_QS="\033[1;37m" #问题颜色
-COLOR_AW="\033[0;37m" #答案颜色
-COLOR_END="\033[1;34m" #颜色结束符
+COLOR_SUC="\033[0;32m" #成功颜色，绿色
+COLOR_ERR="\033[0;31m" #失败颜色，红色
+COLOR_WARN="\033[1;33m" #警告颜色，黄色
+COLOR_QS="\033[1;35m" #问题颜色，浅粉色
+COLOR_AW="\033[1;36m" #提示颜色，浅青色
+COLOR_TIP="\033[1;32m" #答案颜色，浅绿色
+COLOR_END="\033[0m" #颜色结束符，用于将后续的字符颜色还原回原来的颜色，关闭设置的属性
 
 
 echo "\n *** 🚀begin🚀 *** \n"
 
-echo "\n --- ⛵️获取 podspec 文件名和路径⛵️ --- \n"
+echo "\n $COLOR_TIP--- ⛵️获取 podspec 文件名和路径⛵️ ---$COLOR_END \n"
 
 # 获取到文件路径
 podspec_file_path=""
