@@ -111,7 +111,7 @@ echo "git commit -m \"\""
 
 # commit记录信息，从键盘读取，-p 为屏幕提示信息
 function readCommitInfo() {
-	read -p $COLOR_AW"👀请输入 commit 信息<按 Enter 结束>："$COLOR_AW git_commit_desc
+	read -p "👀请输入 commit 信息<按 Enter 结束>：" git_commit_desc
 	# 输入不为空
 	if [[ -n "$git_commit_desc" ]]; then
 		git_commit_desc="${git_commit_desc}"
