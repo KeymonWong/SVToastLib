@@ -40,10 +40,10 @@ function getFileAtDirectory() {
 }
 getFileAtDirectory $directory $podspec_file_ext
 
-echo "\n $COLOR_SUC>>>>>>$COLOR_END"
+echo "\n $COLOR_AW>>>>>>$COLOR_END"
 echo "\n $COLOR_AW"podspec_file_path: ${podspec_file_path}"$COLOR_END"
-echo "\n $COLOR_SUCpodspec_file_name: ${podspec_file_name}$COLOR_END"
-echo "\n $COLOR_SUC<<<<<<$COLOR_END"
+echo "\n $COLOR_AW"podspec_file_name: ${podspec_file_name}"$COLOR_END"
+echo "\n $COLOR_AW<<<<<<$COLOR_END"
 
 echo "\n $COLOR_TIP--- ⛵️获取 podspec 文件内容⛵️ ---$COLOR_END \n"
 
@@ -82,9 +82,9 @@ while read my_line; do
 	fi
 done <$my_file
 
-echo "\n $COLOR_SUC>>>>>>$COLOR_END"
-echo "\n $COLOR_SUCpodspec_version: ${podspec_version}$COLOR_END"
-echo "\n $COLOR_SUC<<<<<<$COLOR_END"
+echo "\n $COLOR_AW>>>>>>$COLOR_END"
+echo "\n $COLOR_AW"podspec_version: ${podspec_version}"$COLOR_END"
+echo "\n $COLOR_AW<<<<<<$COLOR_END"
 
 # pod_spec_name=${podspec_file_name}
 # pod_spec_version=${podspec_version}
@@ -181,6 +181,8 @@ if [[ ! -d $remote_specs_file_directory_at_local ]]; then
 	if [[ $? -ne 0 ]]; then
 		echo "\n $COLOR_ERR--- 😡😡pod repo push 失败，退出脚本😡😡 ---$COLOR_END \n"
 		exit 1
+	else
+		echo "\n $COLOR_SUC--- 🎉pod repo push 成功🎉 ---$COLOR_END \n"
 	fi
 else
 	echo "\n $COLOR_TIP--- ⛵️本地不存在 远端的索引repo，先 add 再 push⛵️ ---$COLOR_END \n"
@@ -191,6 +193,8 @@ else
 	if [[ $? -ne 0 ]]; then
 		echo "\n $COLOR_ERR--- 😡😡pod repo push 失败，退出脚本😡😡 ---$COLOR_END \n"
 		exit 1
+	else
+		echo "\n $COLOR_SUC--- 🎉pod repo push 成功🎉 ---$COLOR_END \n"
 	fi
 fi
 
