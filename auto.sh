@@ -8,6 +8,13 @@ COLOR_AW="\033[1;34m" #提示颜色，蓝色
 COLOR_TIP="\033[1;36m" #答案颜色，青蓝色
 COLOR_END="\033[0m" #颜色结束符，用于将后续的字符颜色还原回原来的颜色，关闭设置的属性
 
+# OKPodSpecs 为 pod repo add 时，自己定义的和远端对应的名称
+# 本地定义的索引库名称，修改为自己的
+local_specs_repo_name="OKPodSpecs"
+# git 远端索引库地址，修改为自己的，https 或者 ssh 形式
+reomte_specs_url="git@github.com:KeymonWong/OKPodSpecs.git"
+# 管理所有 xxx.podspec 的远端索引库被 pod repo add 之后，被添加到了本地的 ~/.cocoapods/repos 目录下
+remote_specs_file_directory_at_local="~/.cocoapods/repos/${local_specs_repo_name}"
 
 echo "\n *** 🚀begin🚀 *** \n"
 
@@ -165,13 +172,6 @@ if [[ $? -ne 0 ]]; then
 	exit 1
 fi
 
-# OKPodSpecs 为 pod repo add 时，自己定义的和远端对应的名称
-# 本地定义的索引库名称，可以修改为自己的
-local_specs_repo_name="OKPodSpecs"
-# git 远端索引库地址，可以修改为自己的，https 或者 ssh 形式
-reomte_specs_url="git@github.com:KeymonWong/OKPodSpecs.git"
-# 管理所有 xxx.podspec 的远端索引库被 pod repo add 之后，被添加到了本地的 ~/.cocoapods/repos 目录下
-remote_specs_file_directory_at_local="~/.cocoapods/repos/${local_specs_repo_name}"
 # -d 判断目录是否存在
 if [[ ! -d $remote_specs_file_directory_at_local ]]; then
 	echo "\n $COLOR_TIP--- ⛵️本地存在 远端的索引repo，直接 push⛵️ ---$COLOR_END \n"
@@ -199,3 +199,4 @@ else
 fi
 
 echo "$COLOR_SUC*** 🎉🎉🎉All Well Done🎉🎉🎉 ***$COLOR_END"
+
